@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxor Society</title>
+    <style>
+        body {
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        #protectedContent {
+            display: none;
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password === "Luxor") {
+                document.getElementById("protectedContent").style.display = "block";
+                document.getElementById("loginForm").style.display = "none";
+            } else {
+                alert("Incorrect password!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="content" id="loginForm">
+        <h1>Enter Password</h1>
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+    <div class="content" id="protectedContent">
+        <h1>Welcome to Luxor Society</h1>
+        <p>This is the secret area where you can write anything.</p>
+        <textarea rows="5" cols="50" placeholder="Write something..."></textarea>
+    </div>
+</body>
+</html>
